@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>BINetCom - بيناتكم | Ingénierie TIC, Formation, Consulting à Sfax Tunisie</title>
+	<meta name="description" content="BINetCom - Business Innovative Networks and Communications. Services d'Ingénierie des TIC, formation à la carte, consulting et solutions innovantes pour entreprises à Sfax, Tunisie.">
+	<meta name="keywords" content="BINetCom, Ingénierie TIC, Formation, Consulting, Sfax, Tunisie, Réseaux, Intelligence Artificielle, Machine Learning, Audit, Développement logiciel, Services IT, Entreprise, Solutions numériques">
+	<meta name="author" content="Ali-Cheikh">
+	<meta property="og:title" content="BINetCom - بيناتكم | Ingénierie TIC, Formation, Consulting à Sfax Tunisie">
+	<meta property="og:description" content="Services innovants en ingénierie des TIC, formation à la carte et consulting pour entreprises à Sfax, Tunisie.">
+	<meta property="og:image" content="https://binet.com.tn/images/hd_logo.png">
+	<meta property="og:url" content="https://binet.com.tn/">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="BINetCom - بيناتكم | Ingénierie TIC, Formation, Consulting à Sfax Tunisie">
+	<meta name="twitter:description" content="Services innovants en ingénierie des TIC, formation à la carte et consulting pour entreprises à Sfax, Tunisie.">
+	<meta name="twitter:image" content="https://binet.com.tn/images/hd_logo.png">
+	<link rel="canonical" href="https://binet.com.tn/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8'
+                        },
+                        secondary: {
+                            DEFAULT: '#1e40af',
+                            dark: '#1e3a8a'
+                        },
+                        dark: {
+                            DEFAULT: '#1f2937',
+                            bg: '#111827',
+                            text: '#f3f4f6'
+                        },
+                        light: '#f3f4f6',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+		html{
+			scroll-behavior: smooth;
+		}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            @apply bg-white dark:bg-dark-bg text-gray-800 dark:text-gray-200 transition-colors duration-300;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            @apply dark:text-white;
+        }
+        .logo img {
+            max-height: 85px;
+            width: auto;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Cookie Consent Banner -->
+    <div class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50 hidden" id="cookieBanner">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="mb-4 md:mb-0">Nous utilisons des cookies pour vous offrir la meilleure expérience. <a href="cookies.html" class="text-blue-300 hover:text-blue-400">Politique de cookies</a></p>
+            <div class="flex space-x-2">
+                <button class="px-4 py-2 border border-white rounded hover:bg-gray-700 transition-colors" id="rejectCookies">Refuser</button>
+                <button class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded transition-colors" id="acceptCookies">Accepter</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white dark:bg-dark-bg shadow-md z-40 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" alt="Logo BINetCom" /></a>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html#hero" class="text-primary dark:text-blue-300 font-medium hover:text-secondary dark:hover:text-blue-200 transition-colors">Accueil</a></li>
+                        <li class="relative dropdown">
+                            <a href="index.html#services" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50 hidden">
+                                <li><a href="services-tic.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Ingénierie des TIC</a></li>
+                                <li><a href="services-formation.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Formation à la carte</a></li>
+                                <li><a href="services-consulting.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Consulting</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">À propos</a></li>
+                        <li><a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon text-gray-700 dark:text-yellow-300" id="themeIcon"></i>
+                    </button>
+                    <button class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                        <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mb-1.5 transition-transform"></span>
+                        <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mb-1.5 transition-transform"></span>
+                        <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-transform"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+	<!-- Mobile Menu -->
+	<div class="fixed inset-0 bg-white dark:bg-gray-900 z-50 overflow-y-auto hidden pt-20 transition-opacity" id="mobileMenu">
+		<div class="container mx-auto px-4 py-8 relative">
+			<!-- Close Button -->
+			<button class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" id="mobileMenuClose" aria-label="Fermer le menu">
+				<i class="fas fa-times text-xl text-gray-700 dark:text-gray-200"></i>
+			</button>
+			<ul class="space-y-4">
+				<li><a href="index.html#hero" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Accueil</a></li>
+				<li>
+					<div class="flex items-center justify-between">
+						<a href="index.html#services" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Services</a>
+						<button class="p-2 transition-transform" id="mobileServicesToggleMenu">
+							<i class="fas fa-chevron-down text-xs"></i>
+						</button>
+					</div>
+					<ul class="pl-4 mt-2 space-y-2 mobile-dropdown" id="mobileServicesDropdownMenu">
+						<li><a href="services-tic.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Ingénierie des TIC</a></li>
+						<li><a href="services-formation.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Formation à la carte</a></li>
+						<li><a href="services-consulting.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Consulting</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html#about" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">À propos</a></li>
+				<li><a href="index.html#contact" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Contact</a></li>
+			</ul>
+			
+			<div class="mt-8">
+				<div class="flex space-x-4">
+					<a href="https://www.linkedin.com/company/binetcom" class="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+						<i class="fab fa-linkedin-in text-gray-700 dark:text-gray-300"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900" id="hero">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">Votre partenaire stratégique en technologies innovantes</h1>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">BINetCom propose des services d'Ingénierie des TIC, de formation et de consulting pour propulser votre entreprise vers l'avenir numérique.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="index.html#services" class="px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg text-center font-medium transition-colors duration-300">Découvrir nos services</a>
+                        <a href="index.html#contact" class="px-8 py-3 border border-primary text-primary dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg text-center font-medium transition-colors duration-300">Nous contacter</a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-delay="200">
+                    <img src="images/hd_logo.png" alt="BINetCom services illustration" class="w-full max-w-lg mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-dark-bg" id="about">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-primary dark:text-blue-300 font-medium">À propos de nous</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2">BINetCom - بيناتكم</h2>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12" data-aos="fade-right">
+                    <img src="images/logo.png" alt="BINetCom company" class="w-full max-w-md mx-auto rounded-lg shadow-md">
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">BINetCom ou Business Innovative Networks and Communications est une entreprise tunisienne née en octobre 2024 et basée à la pépinière Sfax Innovation I, à Route de la Sokra, Km 3, 3052, Sfax, TUNISIE.</p>
+                    
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">BINetCom opère dans le secteur des technologies de l'information et de la communication. Elle propose des services innovants, notamment pour les entreprises.</p>
+                    
+                    <div class="flex flex-wrap gap-6 mb-8">
+                        <div class="bg-blue-50 dark:bg-gray-800 px-6 py-4 rounded-lg text-center shadow-sm">
+                            <span class="block text-2xl font-bold text-primary dark:text-blue-300">2024</span>
+                            <span class="text-gray-600 dark:text-gray-400">Année de création</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-gray-800 px-6 py-4 rounded-lg text-center shadow-sm">
+                            <span class="block text-2xl font-bold text-primary dark:text-blue-300">3+</span>
+                            <span class="text-gray-600 dark:text-gray-400">Services principaux</span>
+                        </div>
+                    </div>
+                    <a href="brochure.html" class="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors duration-300">Notre brochure</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Values Section -->
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900" id="values">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-primary dark:text-blue-300 font-medium">Nos principes</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2">Nos valeurs</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">Découvrez les valeurs fondamentales qui guident notre approche et notre engagement envers nos clients.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Confiance</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Nous croyons que le succès réside dans des partenariats de confiance. Notre engagement envers l'intégrité et la transparence est au cœur de chaque relation client.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Créativité</h3>
+                    <p class="text-gray-600 dark:text-gray-300">La création est au cœur de notre mission. Nous travaillons sans relâche pour innover et proposer des solutions originales qui répondent aux défis technologiques actuels.</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Solidarité</h3>
+                    <p class="text-gray-600 dark:text-gray-300">La solidarité est essentielle pour nous, favorisant un environnement collaboratif. Nous croyons en la force du travail d'équipe et du soutien mutuel pour atteindre l'excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="py-16 md:py-24 bg-white dark:bg-dark-bg" id="services">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-primary dark:text-blue-300 font-medium">Ce que nous offrons</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2">Nos services</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">Découvrez notre gamme complète de services conçus pour répondre à vos besoins technologiques.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up">
+                    <div class="flex justify-center mb-6">
+                        <img src="images/services_tic.png" alt="Ingénierie des TIC" class="h-20">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Ingénierie des TIC</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Solutions complètes pour la conception, l'optimisation et la maintenance des infrastructures réseau et systèmes informatiques.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Services réseaux : architecture, conception et déploiement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Réseaux privés et professionnels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Intelligence Artificielle & Machine Learning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Développement et test logiciel</span>
+                        </li>
+                    </ul>
+                    <a href="services-tic.html" class="block text-center px-4 py-2 border border-primary text-primary dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors duration-300">En savoir plus</a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center mb-6">
+                        <img src="images/formation.png" alt="Formation à la carte" class="h-20">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Formation à la carte</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Programmes de formation personnalisés pour développer les compétences techniques de vos équipes.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Réseaux et télécommunications : les concepts de base</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Intelligence Artificielle & Machine Learning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Préparation à la certification ISTQB Foundation</span>
+                        </li>
+                    </ul>
+                    <a href="services-formation.html" class="block text-center px-4 py-2 border border-primary text-primary dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors duration-300">En savoir plus</a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center mb-6">
+                        <img src="images/consulting.png" alt="Consulting" class="h-20">
+                    </div>
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Consulting</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Expertise et conseils stratégiques pour optimiser vos opérations technologiques et stimuler l'innovation.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Accompagnement technique sur site ou à distance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Audit et optimisation des infrastructures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary dark:text-blue-300 mt-1 mr-2"></i>
+                            <span class="text-gray-600 dark:text-gray-300">Planification stratégique pour l'intégration des technologies</span>
+                        </li>
+                    </ul>
+                    <a href="services-consulting.html" class="block text-center px-4 py-2 border border-primary text-primary dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors duration-300">En savoir plus</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="devis.html" class="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors duration-300">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-primary dark:bg-blue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à transformer votre infrastructure technologique?</h2>
+                <p class="text-lg text-blue-100 dark:text-blue-200 mb-8">Contactez-nous dès aujourd'hui pour discuter de vos besoins et découvrir comment BINetCom peut vous aider à atteindre vos objectifs.</p>
+                <a href="devis.html" class="inline-block px-8 py-3 bg-white text-primary hover:bg-gray-100 rounded-lg font-medium transition-colors duration-300">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900" id="contact">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-primary dark:text-blue-300 font-medium">Restons en contact</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2">Contactez-nous</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">Nous sommes là pour répondre à toutes vos questions et vous aider à trouver les solutions adaptées à vos besoins.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4 text-primary dark:text-blue-300">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Notre adresse</h3>
+                                <a href="https://maps.app.goo.gl/5quKkuTND9DM4e3MA" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 transition-colors">
+                                    BINetCom,<br>Pépinière Sfax Innovation 1, <br>Route de la Soukra, Km 3, <br>3052, Sfax, TUNISIE
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4 text-primary dark:text-blue-300">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Téléphone</h3>
+                                <a href="tel:+21698243245" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 transition-colors">(+216) 98 243 245</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4 text-primary dark:text-blue-300">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Email</h3>
+                                <a href="mailto:contact@binet.com.tn" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 transition-colors">contact@binet.com.tn</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full mr-4 text-primary dark:text-blue-300">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Horaires</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Lun-Ven : 9:00 - 18:00<br>Sam : 8:00 - 13:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Réseaux sociaux</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/company/binetcom" target="_blank" class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full text-primary dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <form action="contact_form.php" method="POST" class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm">
+                        <div class="mb-6">
+                            <label for="company" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Société</label>
+                            <input type="text" id="company" name="company" placeholder="Nom de votre entreprise" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200" required>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Nom</label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Votre email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Service</label>
+                            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200" required>
+                                <option value="" disabled selected>Sélectionnez un service</option>
+                                <option value="tic">Ingénierie des TIC</option>
+                                <option value="formation">Formation à la carte</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg font-medium transition-colors duration-300">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="w-full" data-aos="fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.1196942526412!2d10.717279099999999!3d34.7273772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13002d0043eaa3fb%3A0x4aba45d085301646!2sBINetCom!5e0!3m2!1sar!2stn!4v1746179556910!5m2!1sar!2stn" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="mb-6">
+                        <img src="images/logo.png" alt="BINetCom Logo" class="h-16">
+                    </div>
+                    <p class="text-gray-400 mb-6">BINetCom propose des services innovants dans le secteur des technologies de l'information et de la communication, spécialement conçus pour répondre aux besoins des entreprises.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/binetcom" target="_blank" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Liens rapides</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-white transition-colors duration-300">À propos</a></li>
+                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Nos services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services-tic.html" class="text-gray-400 hover:text-white transition-colors duration-300">Ingénierie des TIC</a></li>
+                        <li><a href="services-formation.html" class="text-gray-400 hover:text-white transition-colors duration-300">Formation à la carte</a></li>
+                        <li><a href="services-consulting.html" class="text-gray-400 hover:text-white transition-colors duration-300">Consulting</a></li>
+                        <li class="pt-4 text-gray-600">= = = = = = = = = = = = =</li>
+                        <li><a href="devis.html" class="text-gray-400 hover:text-white transition-colors duration-300">Demande de devis</a></li>
+                        <li><a href="brochure.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Notre brochure</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-3"></i>
+                            <a href="https://maps.app.goo.gl/5quKkuTND9DM4e3MA" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                BINetCom,<br>Pépinière Sfax Innovation 1, <br>Route de la Soukra, Km 3, <br>3052, Sfax, TUNISIE
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-3"></i>
+                            <a href="tel:+21698243245" class="text-gray-400 hover:text-white transition-colors duration-300">(+216) 98 243 245</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-3"></i>
+                            <a href="mailto:contact@binet.com.tn" class="text-gray-400 hover:text-white transition-colors duration-300">contact@binet.com.tn</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-gray-400 mr-3"></i>
+                            <span class="text-gray-400">Lun-Ven: 9:00 - 18:00<br>Sam: 8:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 BINetCom. Tous droits réservés.</p>
+                    <ul class="flex space-x-6">
+                        <li><a href="privacy.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Politique de confidentialité</a></li>
+                        <li><a href="terms.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Conditions d'utilisation</a></li>
+                        <li><a href="cookies.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Politique de cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <button class="fixed bottom-8 right-8 bg-primary hover:bg-primary-dark text-white p-3 rounded-full shadow-lg transition-colors duration-300 hidden" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+		const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileServicesToggle = document.getElementById('mobileServicesToggleMenu');
+        const mobileServicesDropdown = document.getElementById('mobileServicesDropdownMenu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        });
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+        
+        mobileServicesToggle.addEventListener('click', () => {
+            mobileServicesDropdown.classList.toggle('active');
+            mobileServicesToggle.querySelector('i').classList.toggle('fa-chevron-down');
+            mobileServicesToggle.querySelector('i').classList.toggle('fa-chevron-up');
+        });
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        // Check for saved theme preference or use preferred color scheme
+        if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            // Toggle icon
+            themeIcon.classList.toggle('fa-moon');
+            themeIcon.classList.toggle('fa-sun');
+            
+            // Toggle theme
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+        
+        // Cookie banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const acceptCookies = document.getElementById('acceptCookies');
+        const rejectCookies = document.getElementById('rejectCookies');
+        
+        if (!localStorage.getItem('cookiesAccepted')) {
+            setTimeout(() => {
+                cookieBanner.classList.remove('hidden');
+            }, 1000);
+        }
+        
+        acceptCookies.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.classList.add('hidden');
+        });
+        
+        rejectCookies.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'false');
+            cookieBanner.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
