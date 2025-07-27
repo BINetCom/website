@@ -89,23 +89,34 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// Cookie banner
-const cookieBanner = document.getElementById('cookieBanner');
-const acceptCookies = document.getElementById('acceptCookies');
-const rejectCookies = document.getElementById('rejectCookies');
-
-if (!localStorage.getItem('cookiesAccepted')) {
-    setTimeout(() => {
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookies = document.getElementById('acceptCookies');
+    const rejectCookies = document.getElementById('rejectCookies');
+    
+    // Check if user has already made a choice
+    if (!localStorage.getItem('cookiesAccepted')) {
         cookieBanner.classList.remove('hidden');
-    }, 1000);
-}
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
 
-acceptCookies.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'true');
-    cookieBanner.classList.add('hidden');
-});
+    // Accept cookies
+    acceptCookies.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.classList.remove('show');
+        setTimeout(() => {
+            cookieBanner.classList.add('hidden');
+        }, 300);
+    });
 
-rejectCookies.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'false');
-    cookieBanner.classList.add('hidden');
-});
+    // Reject cookies
+    rejectCookies.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'false');
+        cookieBanner.classList.remove('show');
+        setTimeout(() => {
+            cookieBanner.classList.add('hidden');
+        }, 300);
+    });
+}); 
