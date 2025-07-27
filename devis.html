@@ -90,37 +90,54 @@
 </head>
 <body class="antialiased">
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 bg-white dark:bg-dark-bg shadow-md z-40 transition-all duration-300" id="header">
+    <header class="fixed top-0 left-0 right-0 bg-white dark:bg-dark-bg shadow-md z-40 transition-all duration-300"
+        id="header">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
                 <div class="logo">
                     <a href="index.html"><img src="images/logo.png" alt="Logo BINetCom" class="max-h-[85px] w-auto"/></a>
                 </div>
-                
+
                 <nav class="hidden md:flex items-center space-x-8">
                     <ul class="flex space-x-8">
-                        <li><a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">Accueil</a></li>
-                        <li class="relative dropdown">
-                            <a href="index.html#services" class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">
-                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        <li><a href="index.html#hero"
+                                class="text-primary dark:text-blue-300 font-medium hover:text-secondary dark:hover:text-blue-200 transition-colors">Accueil</a>
+                        </li>
+                        <li><a href="index.html#about"
+                                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">À
+                                propos</a></li>
+                        <li class="relative group"> <!-- Changed from 'dropdown' to 'group' -->
+                            <a
+                                class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs dark:text-yellow-300"></i>
                             </a>
-                            <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50 hidden">
-                                <li><a href="services-tic.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Ingénierie des TIC</a></li>
-                                <li><a href="services-formation.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Formation à la carte</a></li>
-                                <li><a href="services-consulting.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Consulting</a></li>
+                            <ul
+                                class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
+                                <li><a href="services-tic.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Ingénierie
+                                        des TIC</a></li>
+                                <li><a href="services-formation.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Formation
+                                        à la carte</a></li>
+                                <li><a href="services-consulting.html"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Consulting</a>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="index.html#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">À propos</a></li>
-                        <li><a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">Contact</a></li>
+                        <li><a href="index.html#contact"
+                                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">Contact</a>
+                        </li>
                     </ul>
                 </nav>
-                
+
                 <div class="flex items-center space-x-4">
-                    <a href="devis.html" class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg text-sm font-medium transition-colors hidden md:block">Devis ?</a>
-                    <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" id="themeToggle" aria-label="Toggle dark mode">
+                    <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                        id="themeToggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon text-gray-700 dark:text-yellow-300" id="themeIcon"></i>
                     </button>
-                    <button class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <button
+                        class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                        id="mobileMenuToggle" aria-label="Toggle mobile menu">
                         <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mb-1.5 transition-transform"></span>
                         <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 mb-1.5 transition-transform"></span>
                         <span class="block w-6 h-0.5 bg-gray-700 dark:bg-gray-300 transition-transform"></span>
@@ -129,36 +146,53 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Mobile Menu -->
-    <div class="fixed inset-0 bg-white dark:bg-gray-900 z-50 overflow-y-auto hidden pt-20 transition-opacity" id="mobileMenu">
+    <div class="fixed inset-0 bg-white dark:bg-gray-900 z-50 overflow-y-auto hidden pt-20 transition-opacity"
+        id="mobileMenu">
         <div class="container mx-auto px-4 py-8 relative">
             <!-- Close Button -->
-            <button class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors" id="mobileMenuClose" aria-label="Fermer le menu">
+            <button
+                class="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+                id="mobileMenuClose" aria-label="Fermer le menu">
                 <i class="fas fa-times text-xl text-gray-700 dark:text-gray-200"></i>
             </button>
             <ul class="space-y-4">
-                <li><a href="index.html#hero" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Accueil</a></li>
+                <li><a href="index.html#hero"
+                        class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Accueil</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">À
+                        propos</a></li>
                 <li>
-                    <div class="flex items-center justify-between">
-                        <a href="index.html#services" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Services</a>
+                    <div class="flex items-center justify-between cursor-pointer" id="mobileServicesToggleMenu">
+                        <a
+                            class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Services</a>
                         <button class="p-2 transition-transform" id="mobileServicesToggleMenu">
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                     </div>
                     <ul class="pl-4 mt-2 space-y-2 mobile-dropdown" id="mobileServicesDropdownMenu">
-                        <li><a href="services-tic.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Ingénierie des TIC</a></li>
-                        <li><a href="services-formation.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Formation à la carte</a></li>
-                        <li><a href="services-consulting.html" class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Consulting</a></li>
+                        <li><a href="services-tic.html"
+                                class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Ingénierie
+                                des TIC</a></li>
+                        <li><a href="services-formation.html"
+                                class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Formation
+                                à la carte</a></li>
+                        <li><a href="services-consulting.html"
+                                class="block text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-300 py-1 transition-colors">Consulting</a>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="index.html#about" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">À propos</a></li>
-                <li><a href="index.html#contact" class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Contact</a></li>
+                <li><a href="index.html#contact"
+                        class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Contact</a>
+                </li>
             </ul>
-            
+
             <div class="mt-8">
                 <div class="flex space-x-4">
-                    <a href="https://www.linkedin.com/company/binetcom" class="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <a href="https://www.linkedin.com/company/binetcom"
+                        class="p-2 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                         <i class="fab fa-linkedin-in text-gray-700 dark:text-gray-300"></i>
                     </a>
                 </div>

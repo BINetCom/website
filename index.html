@@ -202,7 +202,7 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="Logo BINetCom" /></a>
+                    <a href="index.html"><img src="images/logo.png" alt="Logo BINetCom" class="max-h-[85px] w-auto"/></a>
                 </div>
 
                 <nav class="hidden md:flex items-center space-x-8">
@@ -210,13 +210,16 @@
                         <li><a href="index.html#hero"
                                 class="text-primary dark:text-blue-300 font-medium hover:text-secondary dark:hover:text-blue-200 transition-colors">Accueil</a>
                         </li>
-                        <li class="relative dropdown">
+                        <li><a href="index.html#about"
+                                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">À
+                                propos</a></li>
+                        <li class="relative group"> <!-- Changed from 'dropdown' to 'group' -->
                             <a href="index.html#services"
                                 class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">
                                 Services <i class="fas fa-chevron-down ml-1 text-xs dark:text-yellow-300"></i>
                             </a>
                             <ul
-                                class="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50 hidden">
+                                class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0">
                                 <li><a href="services-tic.html"
                                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Ingénierie
                                         des TIC</a></li>
@@ -228,9 +231,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="index.html#about"
-                                class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">À
-                                propos</a></li>
                         <li><a href="index.html#contact"
                                 class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">Contact</a>
                         </li>
@@ -268,8 +268,11 @@
                 <li><a href="index.html#hero"
                         class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Accueil</a>
                 </li>
+                <li><a href="index.html#about"
+                        class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">À
+                        propos</a></li>
                 <li>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between cursor-pointer" id="mobileServicesToggleMenu">
                         <a href="index.html#services"
                             class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Services</a>
                         <button class="p-2 transition-transform" id="mobileServicesToggleMenu">
@@ -288,9 +291,6 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="index.html#about"
-                        class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">À
-                        propos</a></li>
                 <li><a href="index.html#contact"
                         class="block text-xl font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-blue-300 py-2 transition-colors">Contact</a>
                 </li>
