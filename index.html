@@ -194,6 +194,7 @@
         #floatingDevisBtn.visible {
             opacity: 1;
             transform: translate(-50%, 0);
+            animation: playfulShake 1s ease-in-out infinite;
             /* Center horizontally when visible */
         }
 
@@ -205,6 +206,27 @@
 
         #floatingDevisBtn a:hover {
             transform: scale(1.05);
+        }
+        /* Playful Exaggerated Shake */
+        @media (max-width: 768px) {
+            #floatingDevisBtn {
+                animation: playfulShake 1s ease-in-out infinite;
+            }
+
+            @keyframes playfulShake {
+                0%, 100% {
+                    transform: translate(-50%, 0) rotate(0deg);
+                }
+                25% {
+                    transform: translate(-50%, -8px) rotate(-5deg);
+                }
+                50% {
+                    transform: translate(-50%, -4px) rotate(5deg);
+                }
+                75% {
+                    transform: translate(-50%, -6px) rotate(-3deg);
+                }
+            }
         }
     </style>
 </head>

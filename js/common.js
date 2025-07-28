@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             floatingDevisBtn.classList.add('opacity-0', 'translate-y-10');
             setTimeout(() => {
                 floatingDevisBtn.classList.add('hidden');
-            }, 500); // Match this with your transition duration
+            }, 500);
         }
     }
     
@@ -164,20 +164,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close button when clicking anywhere else
+    // Desktop click handler (only hide on desktop)
     document.addEventListener('click', function(e) {
-        if (!floatingDevisBtn.contains(e.target)) {
-            // Check if the click wasn't on a services link
-            let isServicesLink = false;
-            servicesLinks.forEach(link => {
-                if (link.contains(e.target)) {
-                    isServicesLink = true;
+        // Only run on desktop
+        if (window.innerWidth >= 768) {
+            if (!floatingDevisBtn.contains(e.target)) {
+                // Check if click was on any services link
+                const isServicesLink = Array.from(servicesLinks).some(link => 
+                    link.contains(e.target)
+                );
+                
+                if (!isServicesLink) {
+                    toggleDevisButton(false);
                 }
-            });
-            
-            if (!isServicesLink) {
-                toggleDevisButton(false);
             }
         }
     });
+    
+    // Mobile menu close button handler
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            // Keep button visible when closing mobile menu
+            toggleDevisButton(true);
+        });
+    }
 });
