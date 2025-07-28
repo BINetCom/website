@@ -119,4 +119,65 @@ document.addEventListener('DOMContentLoaded', function() {
             cookieBanner.classList.add('hidden');
         }, 300);
     });
-}); 
+});
+// Floating Devis Button Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingDevisBtn = document.getElementById('floatingDevisBtn');
+    const servicesLinks = document.querySelectorAll('a[href="#services"], nav a[href*="services"]');
+    
+    // Show/hide function
+    function toggleDevisButton(show) {
+        if (show) {
+            floatingDevisBtn.classList.remove('hidden');
+            setTimeout(() => {
+                floatingDevisBtn.classList.remove('opacity-0', 'translate-y-10');
+                floatingDevisBtn.classList.add('opacity-100', 'translate-y-0');
+            }, 10);
+        } else {
+            floatingDevisBtn.classList.remove('opacity-100', 'translate-y-0');
+            floatingDevisBtn.classList.add('opacity-0', 'translate-y-10');
+            setTimeout(() => {
+                floatingDevisBtn.classList.add('hidden');
+            }, 500); // Match this with your transition duration
+        }
+    }
+    
+    // Add click event to all services links
+    servicesLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Prevent default if it's an anchor link
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+            }
+            toggleDevisButton(true);
+            
+            // Scroll to services section if it's an anchor link
+            if (this.getAttribute('href').startsWith('#')) {
+                const target = document.getElementById('services');
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Close button when clicking anywhere else
+    document.addEventListener('click', function(e) {
+        if (!floatingDevisBtn.contains(e.target)) {
+            // Check if the click wasn't on a services link
+            let isServicesLink = false;
+            servicesLinks.forEach(link => {
+                if (link.contains(e.target)) {
+                    isServicesLink = true;
+                }
+            });
+            
+            if (!isServicesLink) {
+                toggleDevisButton(false);
+            }
+        }
+    });
+});
