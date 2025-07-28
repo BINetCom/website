@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+ </head>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <div class="text-center z-10 p-8 max-w-md bg-gray-900/70 backdrop-blur-sm rounded-xl border border-gray-700">
+        <h1 class="text-5xl font-bold mb-4 text-blue-400">404 Not Found</h1>
+        <p class="text-xl mb-6 text-gray-300">The page you are looking for does not exist.</p>
+        <a href="/" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 inline-block shadow-lg hover:shadow-blue-500/30">
+            Go to Homepage
+        </a>
+    </div>
+   <script src="https://cdn.jsdelivr.net/gh/Ali-Cheikh/scape.js@main/scape.js" defer></script>
+    <!-- Load Scape.js properly -->
+    <script>
+        // Correct Scape.js initialization as per official docs
+        window.addEventListener('DOMContentLoaded', () => {
+            ScapeJs.updateConfig({
+                type: "shape",
+                shape: "star",
+                count: 25,
+                size: 40,
+                fillColor: "rgba(56, 182, 255, 0.2)",
+                strokeColor: "rgba(255, 255, 255, 0.3)",
+                strokeWidth: 1
+            });
+            scape.init();
+        });
+    </script>
+</body>
+</html>
