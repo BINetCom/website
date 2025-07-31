@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     
     <!-- Tailwind CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -202,7 +203,7 @@
 
     <!-- Hero Section -->
     <section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900">
-        <div class="container mx-auto px-4 text-center" data-aos="fade-down">
+        <div class="container mx-auto px-4 text-center" >
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Demande de Devis</h1>
             <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Obtenez une estimation personnalisée pour nos services d'ingénierie, formation ou consulting.
@@ -213,7 +214,7 @@
     <!-- Form Section -->
     <section class="py-16 md:py-24 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-4">
-            <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" data-aos="fade-up">
+            <div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" >
                 <form action="https://formspree.io/f/mjkowjdz" method="POST" id="devis-form" class="space-y-6">
                     <!-- Société -->
                     <div>
@@ -277,7 +278,7 @@
     <!-- CTA Section -->
     <section class="py-16 md:py-24 bg-primary dark:bg-blue-900 text-white">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="text-center max-w-3xl mx-auto" >
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Vous avez des questions ?</h2>
                 <p class="text-lg text-blue-100 dark:text-blue-200 mb-8">
                     Contactez-nous directement par téléphone ou email pour discuter de vos besoins spécifiques.
@@ -378,5 +379,14 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="js/common.js"></script>
+    <script>
+        
+// Initialize AOS
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+});
+    </script>
 </body>
 </html>
