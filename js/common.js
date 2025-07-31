@@ -16,13 +16,6 @@ function handleScrollAnimations() {
 // Initialize on load and scroll
 window.addEventListener('load', handleScrollAnimations);
 window.addEventListener('scroll', handleScrollAnimations);
-
-// Initialize AOS
-AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true
-});
 // Mobile menu toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
