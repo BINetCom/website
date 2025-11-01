@@ -79,6 +79,65 @@
 		.mobile-dropdown.active {
 			max-height: 500px;
 		}
+		/* Styles pour les modales */
+		.modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			z-index: 1000;
+			backdrop-filter: blur(5px);
+		}
+		.modal.active {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.modal-content {
+			background: white;
+			dark:bg-gray-800;
+			border-radius: 12px;
+			max-width: 90%;
+			max-height: 90vh;
+			width: 800px;
+			overflow-y: auto;
+			transform: scale(0.9);
+			opacity: 0;
+			transition: all 0.3s ease;
+		}
+		.modal.active .modal-content {
+			transform: scale(1);
+			opacity: 1;
+		}
+		.modal-close {
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			background: rgba(0, 0, 0, 0.1);
+			border: none;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background 0.3s ease;
+		}
+		.modal-close:hover {
+			background: rgba(0, 0, 0, 0.2);
+		}
+		.formation-card {
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+		.formation-card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		}
 	</style>
 </head>
 <body class="antialiased">
@@ -199,39 +258,45 @@
 			</div>
 			
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+				<!-- Formation 1 : Le réseau 5G -->
+				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-5g')">
 					<div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl mx-auto">
-						<i class="fas fa-satellite-dish"></i>
+						<i class="fas fa-tower-broadcast"></i>
 					</div>
-					<h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Expert Réseaux 5G</h3>
+					<h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Le réseau 5G</h3>
 					<ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm mb-4">
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Architecture 5G SA vs NSA et virtualisation</span>
+							<span>Histoire de la téléphonie mobile</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Déploiement gNodeB et optimisation RAN</span>
+							<span>Architecture des réseaux 2G à 5G</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Network Slicing et qualité de service</span>
+							<span>La 5G-SA : VNFs cloud-natives et portabilité</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Core 5G et intégration cloud</span>
+							<span>Network slicing et edge computing</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Cas pratiques et outils de monitoring</span>
+							<span>Antennes 5G : mMIMO & beamforming</span>
+						</li>
+						<li class="flex items-start">
+							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
+							<span>Travaux pratiques</span>
 						</li>
 					</ul>
 					<div class="text-center mt-4">
-						<span class="text-sm text-primary dark:text-blue-300 font-medium">Durée: 35 heures</span>
+						<span class="text-sm text-primary dark:text-blue-300 font-medium">Durée: 40 heures</span>
 					</div>
 				</div>
 				
-				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+				<!-- Formation 2 : 5G Cloud-Native -->
+				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-cloud')">
 					<div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6 text-green-600 dark:text-green-300 text-2xl mx-auto">
 						<i class="fas fa-cloud"></i>
 					</div>
@@ -259,7 +324,8 @@
 					</div>
 				</div>
 				
-				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700">
+				<!-- Formation 3 : Sécurité 5G -->
+				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-security')">
 					<div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-6 text-red-600 dark:text-red-300 text-2xl mx-auto">
 						<i class="fas fa-shield-alt"></i>
 					</div>
@@ -287,9 +353,9 @@
 					</div>
 				</div>
 			</div>
-
+			
 			<!-- Added Methodology Section -->
-			<div class="mt-16 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
+			<div class="mt-16 bg-gray-50 dark:bg-gray-800 rounded-lg p-8" >
 				<div class="text-center mb-8">
 					<h3 class="text-2xl font-bold text-gray-900 dark:text-white">Notre méthodologie</h3>
 					<p class="text-gray-600 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
@@ -332,6 +398,234 @@
 			</div>
 		</div>
 	</section>
+
+    <!-- Modal pour Formation 5G -->
+    <div class="modal" id="modal-5g">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            <button class="modal-close" onclick="closeModal('modal-5g')">
+                <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+            </button>
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 text-primary dark:text-blue-300 text-3xl mx-auto">
+                        <i class="fas fa-tower-broadcast"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Le réseau 5G</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Formation complète - 40 heures</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Objectifs pédagogiques</h3>
+                        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
+                                <span>Comprendre l'architecture complète de la 5G SA et NSA</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
+                                <span>Maîtriser les technologies radio avancées</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
+                                <span>Implémenter et gérer le network slicing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
+                                <span>Déployer des fonctions réseau virtualisées</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Évolution technologique (8h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Histoire des réseaux mobiles, standardisation 3GPP, comparatif technique</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Architecture 5G SA (12h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">RAN, Core Network, interfaces et protocoles</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 3 : Technologies radio (10h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Ondes millimétriques, Massive MIMO, beamforming</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 4 : Services avancés (10h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Network Slicing, Edge Computing, QoS avancée</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-lg font-bold text-primary dark:text-blue-300">40 heures de formation</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">70% pratique - 30% théorique</p>
+                        </div>
+                        <a href="devis.html?formation=reseau-5g" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour Formation 5G Cloud-Native -->
+    <div class="modal" id="modal-cloud">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            <button class="modal-close" onclick="closeModal('modal-cloud')">
+                <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+            </button>
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4 text-green-600 dark:text-green-300 text-3xl mx-auto">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">5G Cloud-Native</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Formation avancée - 30 heures</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Objectifs pédagogiques</h3>
+                        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 dark:text-green-400 mt-1 mr-3"></i>
+                                <span>Maîtriser la conteneurisation et l'orchestration Kubernetes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 dark:text-green-400 mt-1 mr-3"></i>
+                                <span>Déployer des fonctions réseau cloud-natives</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 dark:text-green-400 mt-1 mr-3"></i>
+                                <span>Automatiser les déploiements avec Infrastructure as Code</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 dark:text-green-400 mt-1 mr-3"></i>
+                                <span>Implémenter des réseaux 5G privés</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Fondamentaux cloud (6h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Virtualisation, conteneurisation, architecture microservices</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Orchestration Kubernetes (10h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Architecture K8s pour telecom, CNF, déploiement automatique</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 3 : Automation (8h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Infrastructure as Code, GitOps, pipelines CI/CD</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 4 : Réseaux privés (6h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Architecture campus networks, solutions On-Premise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-lg font-bold text-green-600 dark:text-green-300">30 heures de formation</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">75% pratique - 25% théorique</p>
+                        </div>
+                        <a href="devis.html?formation=5g-cloud-native" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour Formation Sécurité 5G -->
+    <div class="modal" id="modal-security">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            <button class="modal-close" onclick="closeModal('modal-security')">
+                <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+            </button>
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-4 text-red-600 dark:text-red-300 text-3xl mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Sécurité 5G</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Formation spécialisée - 25 heures</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Objectifs pédagogiques</h3>
+                        <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 dark:text-red-400 mt-1 mr-3"></i>
+                                <span>Identifier les vulnérabilités spécifiques à la 5G</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 dark:text-red-400 mt-1 mr-3"></i>
+                                <span>Protéger les Network Slices et interfaces critiques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 dark:text-red-400 mt-1 mr-3"></i>
+                                <span>Sécuriser les déploiements IoT massifs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-red-600 dark:text-red-400 mt-1 mr-3"></i>
+                                <span>Mettre en place un monitoring sécurité adapté</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Menaces et vulnérabilités (6h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Analyse de risque, surfaces d'attaque, tests d'intrusion</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Sécurité des slices (7h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Isolation, politiques de sécurité, gestion des identités</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 3 : IoT Security (6h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Sécurité des devices, authentification massive, détection d'anomalies</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 4 : Monitoring (6h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">SOC spécialisé, détection d'intrusions, forensic</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-lg font-bold text-red-600 dark:text-red-300">25 heures de formation</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">70% pratique - 30% théorique</p>
+                        </div>
+                        <a href="devis.html?formation=securite-5g" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	
     <!-- CTA Section -->
     <section class="py-16 md:py-24 bg-primary dark:bg-blue-900 text-white">
@@ -428,6 +722,46 @@
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Gestion des modales
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer la modal en cliquant à l'extérieur
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer avec la touche Echap
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal.active');
+                modals.forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Initialisation AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
     <script src="js/common.js"></script>
 </body>
 </html>
