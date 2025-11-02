@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="BINetCom - Services d'Ingénierie des TIC: solutions réseaux, IA, développement logiciel et tests selon méthodes ISTQB en Tunisie.">
+    <meta name="description" content="BINetCom - Services d'Ingénierie des TIC: réseaux 5G, développement web/mobile, intelligence artificielle et solutions cloud en Tunisie.">
     <title>BINetCom - Ingénierie des TIC</title>
     
     <!-- Favicon -->
@@ -74,6 +74,79 @@
         .dropdown:hover .dropdown-menu {
             display: block;
         }
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-dropdown.active {
+            max-height: 500px;
+        }
+        /* Styles pour les modales */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            dark:bg-gray-800;
+            border-radius: 12px;
+            max-width: 90%;
+            max-height: 90vh;
+            width: 800px;
+            overflow-y: auto;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .service-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .feature-list li {
+            @apply flex items-start mb-2;
+        }
+        .feature-list li i {
+            @apply text-green-500 mt-1 mr-3;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -94,7 +167,7 @@
                         <li><a href="index.html#about"
                                 class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">À
                                 propos</a></li>
-                        <li class="relative group"> <!-- Changed from 'dropdown' to 'group' -->
+                        <li class="relative group">
                             <a href="index.html#services"
                                 class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-300 font-medium transition-colors">
                                 Services <i class="fas fa-chevron-down ml-1 text-xs dark:text-yellow-300"></i>
@@ -203,60 +276,260 @@
     <!-- Main Services -->
     <section class="py-16 bg-white dark:bg-dark-bg">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16" ">
+            <div class="text-center mb-16">
                 <span class="text-primary dark:text-blue-300 font-medium">Expertise Technologique</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2">Nos services en technologies de l'information</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">BINetCom propose une approche complète en ingénierie des TIC, alliant performance réseau, IA & Automatisation et développement/test logiciel.</p>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">BINetCom propose une approche complète en ingénierie des TIC, alliant performance réseau, développement web/mobile et intelligence artificielle.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Réseaux mobiles -->
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" ">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Réseaux & Télécoms -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 service-card" onclick="openModal('modal-reseaux')">
                     <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl mx-auto">
-                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-satellite-dish"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Réseaux mobiles & privés</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Conception, déploiement et optimisation de réseaux mobiles 4G/5G, réseaux d'entreprise, et Wi-Fi sécurisés.</p>
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Réseaux & Télécoms</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Solutions réseaux 5G, infrastructures cloud-native et sécurité des télécommunications.</p>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-sm">En savoir plus</span>
+                    </div>
                 </div>
                 
-                <!-- IA -->
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" " >
-                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl mx-auto">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">IA & Automatisation</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Développement d'algorithmes, intégration de modèles de Machine Learning, GenAI et traitement de données pour vos projets innovants et automatisation des processus.</p>
-                </div>
-                
-                <!-- Développement logiciel -->
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" " data-aos-delay="200">
-                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl mx-auto">
+                <!-- Développement Web/Mobile -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 service-card" onclick="openModal('modal-developpement')">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6 text-green-600 dark:text-green-300 text-2xl mx-auto">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Développement logiciel</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Développement front-end, back-end et full-stack avec les dernières technologies : React, Node.js, Python, Java, etc.</p>
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Développement Web/Mobile</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Applications modernes, solutions cloud et architectures microservices.</p>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 rounded-full text-sm">En savoir plus</span>
+                    </div>
                 </div>
                 
-                <!-- Test logiciel -->
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700" " data-aos-delay="300">
-                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl mx-auto">
-                        <i class="fas fa-vial"></i>
+                <!-- Intelligence Artificielle -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 service-card" onclick="openModal('modal-ia')">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-6 text-purple-600 dark:text-purple-300 text-2xl mx-auto">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Test logiciel - méthodes ISTQB</h3>
-                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Mise en place de stratégies de test, automatisation, validation logicielle.</p>
+                    <h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Intelligence Artificielle</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center mb-6">Machine Learning, Computer Vision et solutions d'automatisation intelligente.</p>
+                    <div class="text-center">
+                        <span class="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 rounded-full text-sm">En savoir plus</span>
+                    </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12" ">
+            <div class="text-center mt-12">
                 <a href="devis.html" class="inline-block px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors duration-300">Demander un service</a>
             </div>
         </div>
     </section>
 
+    <!-- Modal Réseaux & Télécoms -->
+    <div class="modal" id="modal-reseaux">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            <button class="modal-close" onclick="closeModal('modal-reseaux')">
+                <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+            </button>
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 text-primary dark:text-blue-300 text-3xl mx-auto">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Réseaux & Télécoms</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Solutions complètes pour vos infrastructures de communication</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Nos expertises</h3>
+                        <ul class="feature-list text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check"></i> <span>Réseaux 5G SA/NSA et core cloud-native</span></li>
+                            <li><i class="fas fa-check"></i> <span>Virtualisation des fonctions réseau (NFV)</span></li>
+                            <li><i class="fas fa-check"></i> <span>Réseaux privés 5G et solutions campus</span></li>
+                            <li><i class="fas fa-check"></i> <span>Orchestration Kubernetes pour telecom</span></li>
+                            <li><i class="fas fa-check"></i> <span>Sécurité des réseaux et conformité</span></li>
+                            <li><i class="fas fa-check"></i> <span>Optimisation et monitoring avancé</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Open5GS</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Kubernetes</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Docker</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">srsRAN</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Prometheus</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm">Grafana</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 mb-6">
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Cas d'usage typiques :</h4>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>• Déploiement de réseaux 5G privés pour l'industrie 4.0</li>
+                        <li>• Migration d'infrastructures legacy vers des architectures cloud-native</li>
+                        <li>• Implémentation de solutions de network slicing</li>
+                        <li>• Optimisation de la qualité de service pour applications critiques</li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-lg font-bold text-primary dark:text-blue-300">Service sur mesure</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Étude, déploiement et support</p>
+                        </div>
+                        <a href="devis.html?service=reseaux-telecoms" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Développement Web/Mobile -->
+    <div class="modal" id="modal-developpement">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            <button class="modal-close" onclick="closeModal('modal-developpement')">
+                <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+            </button>
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4 text-green-600 dark:text-green-300 text-3xl mx-auto">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Développement Web/Mobile</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Applications modernes et solutions digitales innovantes</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Nos expertises</h3>
+                        <ul class="feature-list text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check"></i> <span>Applications web React/Next.js et Vue.js</span></li>
+                            <li><i class="fas fa-check"></i> <span>Applications mobiles React Native et Flutter</span></li>
+                            <li><i class="fas fa-check"></i> <span>API RESTful et GraphQL</span></li>
+                            <li><i class="fas fa-check"></i> <span>Architectures microservices</span></li>
+                            <li><i class="fas fa-check"></i> <span>Bases de données SQL et NoSQL</span></li>
+                            <li><i class="fas fa-check"></i> <span>CI/CD et DevOps</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Stack technique</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm">MongoDB</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 mb-6">
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Projets réalisables :</h4>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>• Plateformes e-commerce et marketplaces</li>
+                        <li>• Applications SaaS et solutions métier</li>
+                        <li>• Systèmes de gestion de contenu personnalisés</li>
+                        <li>• Applications mobiles cross-platform</li>
+                        <li>• APIs et services backend scalables</li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-lg font-bold text-green-600 dark:text-green-300">Développement agile</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">MVP, scaling et maintenance</p>
+                        </div>
+                        <a href="devis.html?service=developpement-web" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Intelligence Artificielle -->
+    <div class="modal" id="modal-ia">
+        <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
+            <button class="modal-close" onclick="closeModal('modal-ia')">
+                <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
+            </button>
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mb-4 text-purple-600 dark:text-purple-300 text-3xl mx-auto">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Intelligence Artificielle</h2>
+                    <p class="text-gray-600 dark:text-gray-300">Solutions d'IA sur mesure pour l'innovation business</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Nos expertises</h3>
+                        <ul class="feature-list text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check"></i> <span>Machine Learning et Deep Learning</span></li>
+                            <li><i class="fas fa-check"></i> <span>Computer Vision et traitement d'images</span></li>
+                            <li><i class="fas fa-check"></i> <span>Natural Language Processing (NLP)</span></li>
+                            <li><i class="fas fa-check"></i> <span>Génération de contenu (GenAI)</span></li>
+                            <li><i class="fas fa-check"></i> <span>Recommandation et personalisation</span></li>
+                            <li><i class="fas fa-check"></i> <span>Optimisation et prédiction</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Technologies IA</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">TensorFlow</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">PyTorch</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">OpenCV</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">Hugging Face</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">LangChain</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm">Scikit-learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 mb-6">
+                    <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Applications concrètes :</h4>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>• Chatbots intelligents et assistants virtuels</li>
+                        <li>• Systèmes de reconnaissance d'images et vidéos</li>
+                        <li>• Analyse de sentiment et classification de texte</li>
+                        <li>• Prédiction de maintenance et détection d'anomalies</li>
+                        <li>• Optimisation de processus métier</li>
+                    </ul>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-lg font-bold text-purple-600 dark:text-purple-300">IA responsable</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Éthique, transparence, performance</p>
+                        </div>
+                        <a href="devis.html?service=intelligence-artificielle" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
+                            Demander un devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- CTA Section -->
     <section class="py-16 bg-primary dark:bg-blue-900 text-white">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto" ">
+            <div class="text-center max-w-3xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Construisons ensemble vos solutions technologiques</h2>
                 <p class="text-lg text-blue-100 dark:text-blue-200 mb-8">Nos experts sont à votre écoute pour concevoir, déployer et maintenir vos infrastructures et applications sur mesure.</p>
                 <a href="devis.html" class="inline-block px-8 py-3 bg-white text-primary hover:bg-gray-100 rounded-lg font-medium transition-colors duration-300">Demander un devis</a>
@@ -346,6 +619,46 @@
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Gestion des modales
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer la modal en cliquant à l'extérieur
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer avec la touche Echap
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal.active');
+                modals.forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Initialisation AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
     <script src="js/common.js"></script>
 </body>
 </html>
