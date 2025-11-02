@@ -258,44 +258,43 @@
 			</div>
 			
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<!-- Formation 1 : Le réseau 5G -->
-				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-5g')">
+				<!-- Formation 1 : EXPERT 5G -->
+				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-expert-5g')">
 					<div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-6 text-primary dark:text-blue-300 text-2xl mx-auto">
 						<i class="fas fa-tower-broadcast"></i>
 					</div>
-					<h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Le réseau 5G</h3>
+					<h3 class="text-xl font-bold text-center text-gray-900 dark:text-white mb-4">Expert Réseaux 5G</h3>
 					<ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm mb-4">
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Histoire de la téléphonie mobile</span>
+							<span>Fondamentaux et évolution technologique</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Architecture des réseaux 2G à 5G</span>
+							<span>Standardisation 3GPP et écosystème</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>La 5G-SA : VNFs cloud-natives et portabilité</span>
+							<span>Cas d'usage eMBB, mMTC, URLLC</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Network slicing et edge computing</span>
+							<span>Architecture 5G SA vs NSA</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Antennes 5G : mMIMO & beamforming</span>
+							<span>Technologies radio avancées</span>
 						</li>
 						<li class="flex items-start">
 							<i class="fas fa-check-circle text-primary dark:text-blue-300 mt-1 mr-2 text-xs"></i>
-							<span>Travaux pratiques</span>
+							<span>Travaux pratiques et études de cas</span>
 						</li>
 					</ul>
 					<div class="text-center mt-4">
 						<span class="text-sm text-primary dark:text-blue-300 font-medium">Durée: 40 heures</span>
 					</div>
 				</div>
-				
-				<!-- Formation 2 : 5G Cloud-Native -->
+						
 				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-cloud')">
 					<div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6 text-green-600 dark:text-green-300 text-2xl mx-auto">
 						<i class="fas fa-cloud"></i>
@@ -324,7 +323,6 @@
 					</div>
 				</div>
 				
-				<!-- Formation 3 : Sécurité 5G -->
 				<div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 dark:border-gray-700 formation-card" onclick="openModal('modal-security')">
 					<div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mb-6 text-red-600 dark:text-red-300 text-2xl mx-auto">
 						<i class="fas fa-shield-alt"></i>
@@ -399,10 +397,10 @@
 		</div>
 	</section>
 
-    <!-- Modal pour Formation 5G -->
-    <div class="modal" id="modal-5g">
+    <!-- Modal pour Formation Expert 5G -->
+    <div class="modal" id="modal-expert-5g">
         <div class="modal-content relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl">
-            <button class="modal-close" onclick="closeModal('modal-5g')">
+            <button class="modal-close" onclick="closeModal('modal-expert-5g')">
                 <i class="fas fa-times text-gray-600 dark:text-gray-300"></i>
             </button>
             <div class="p-8">
@@ -410,7 +408,7 @@
                     <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-4 text-primary dark:text-blue-300 text-3xl mx-auto">
                         <i class="fas fa-tower-broadcast"></i>
                     </div>
-                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Le réseau 5G</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Expert Réseaux 5G</h2>
                     <p class="text-gray-600 dark:text-gray-300">Formation complète - 40 heures</p>
                 </div>
 
@@ -420,19 +418,19 @@
                         <ul class="space-y-3 text-gray-600 dark:text-gray-300">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
-                                <span>Comprendre l'architecture complète de la 5G SA et NSA</span>
+                                <span>Maîtriser l'évolution technologique 1G à 5G</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
-                                <span>Maîtriser les technologies radio avancées</span>
+                                <span>Comprendre la standardisation 3GPP et l'écosystème</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
-                                <span>Implémenter et gérer le network slicing</span>
+                                <span>Analyser les cas d'usage eMBB, mMTC, URLLC</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-blue-600 dark:text-blue-400 mt-1 mr-3"></i>
-                                <span>Déployer des fonctions réseau virtualisées</span>
+                                <span>Architecturer des solutions 5G SA et NSA</span>
                             </li>
                         </ul>
                     </div>
@@ -441,8 +439,8 @@
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
                         <div class="space-y-4">
                             <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Évolution technologique (8h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Histoire des réseaux mobiles, standardisation 3GPP, comparatif technique</p>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Fondamentaux (8h)</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Histoire 1G-5G, standardisation 3GPP, cas d'usage</p>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Architecture 5G SA (12h)</h4>
@@ -460,12 +458,28 @@
                     </div>
                 </div>
 
+                <div class="mt-8">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Contenu pédagogique détaillé</h3>
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Module 1 - Fondamentaux et Évolution (8h) :</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>• Histoire détaillée des réseaux mobiles (1G à 5G)</li>
+                            <li>• Architecture 1G (AMPS, NMT, TACS) et limitations</li>
+                            <li>• Révolution 2G GSM : numérisation et sécurité</li>
+                            <li>• Standardisation 3GPP : organisation et processus</li>
+                            <li>• Releases 15/16/17 : roadmap et fonctionnalités</li>
+                            <li>• Cas d'usage eMBB, mMTC, URLLC et exigences</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                     <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                         <div class="text-center sm:text-left">
                             <span class="text-lg font-bold text-primary dark:text-blue-300">40 heures de formation</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">70% pratique - 30% théorique</p>
                         </div>
-                        <a href="devis.html?formation=reseau-5g" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors">
+                        <a href="devis.html?formation=expert-5g" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors">
                             Demander un devis
                         </a>
                     </div>
@@ -539,6 +553,7 @@
                     <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                         <div class="text-center sm:text-left">
                             <span class="text-lg font-bold text-green-600 dark:text-green-300">30 heures de formation</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">75% pratique - 25% théorique</p>
                         </div>
                         <a href="devis.html?formation=5g-cloud-native" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors">
                             Demander un devis
@@ -614,6 +629,7 @@
                     <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                         <div class="text-center sm:text-left">
                             <span class="text-lg font-bold text-red-600 dark:text-red-300">25 heures de formation</span>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">70% pratique - 30% théorique</p>
                         </div>
                         <a href="devis.html?formation=securite-5g" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors">
                             Demander un devis
