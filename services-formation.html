@@ -102,7 +102,7 @@
 			border-radius: 12px;
 			max-width: 90%;
 			max-height: 90vh;
-			width: 800px;
+			width: 900px;
 			overflow-y: auto;
 			transform: scale(0.9);
 			opacity: 0;
@@ -137,6 +137,18 @@
 		.formation-card:hover {
 			transform: translateY(-5px);
 			box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		}
+		.module-content {
+			background: #f8fafc;
+			dark:bg-gray-700;
+			border-left: 4px solid #3b82f6;
+			padding: 1rem;
+			margin: 0.5rem 0;
+			border-radius: 0 8px 8px 0;
+		}
+		.dark .module-content {
+			background: #374151;
+			border-left-color: #60a5fa;
 		}
 	</style>
 </head>
@@ -412,7 +424,7 @@
                     <p class="text-gray-600 dark:text-gray-300">Formation complète - 40 heures</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Objectifs pédagogiques</h3>
                         <ul class="space-y-3 text-gray-600 dark:text-gray-300">
@@ -436,39 +448,79 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Fondamentaux (8h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Histoire 1G-5G, standardisation 3GPP, cas d'usage</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Architecture 5G SA (12h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">RAN, Core Network, interfaces et protocoles</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 3 : Technologies radio (10h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Ondes millimétriques, Massive MIMO, beamforming</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 4 : Services avancés (10h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Network Slicing, Edge Computing, QoS avancée</p>
-                            </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Public cible</h3>
+                        <div class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <p>• Ingénieurs réseaux et télécoms</p>
+                            <p>• Architectes solutions</p>
+                            <p>• Techniciens supérieurs</p>
+                            <p>• Chefs de projet telecom</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-8">
+                <div class="mb-8">
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Contenu pédagogique détaillé</h3>
-                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-                        <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Module 1 - Fondamentaux et Évolution (8h) :</h4>
-                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2">
-                            <li>• Histoire détaillée des réseaux mobiles (1G à 5G)</li>
-                            <li>• Architecture 1G (AMPS, NMT, TACS) et limitations</li>
-                            <li>• Révolution 2G GSM : numérisation et sécurité</li>
-                            <li>• Standardisation 3GPP : organisation et processus</li>
-                            <li>• Releases 15/16/17 : roadmap et fonctionnalités</li>
-                            <li>• Cas d'usage eMBB, mMTC, URLLC et exigences</li>
+                    
+                    <div class="module-content">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 1 : Fondamentaux et Évolution Technologique (8h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Histoire détaillée des réseaux mobiles : 1G à 5G</li>
+                            <li>• Architecture 1G : AMPS, NMT, TACS et limitations</li>
+                            <li>• Révolution 2G GSM : numérisation, sécurité, architecture BSS/NSS</li>
+                            <li>• Évolutions 2.5G : GPRS, EDGE et commutation par paquets</li>
+                            <li>• Technologies 3G/4G : UMTS, HSPA, LTE et architecture tout-IP</li>
+                            <li>• Standardisation 3GPP : organisation, groupes de travail, processus</li>
+                            <li>• Releases 15/16/17 : roadmap et fonctionnalités clés</li>
+                            <li>• Cas d'usage eMBB, mMTC, URLLC : exigences techniques et applications</li>
+                            <li><strong>TP :</strong> Analyse comparative des générations et étude de cas réels</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 2 : Architecture 5G SA (12h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Architecture de référence 3GPP : RAN, Core Network, interfaces</li>
+                            <li>• Comparaison NSA (Option 3) vs SA (Option 2) : avantages et limitations</li>
+                            <li>• Radio Access Network (RAN) : gNB, NG-RAN, architecture centralisée/distribuée</li>
+                            <li>• 5G Core Network (5GC) : architecture SBA (Service-Based Architecture)</li>
+                            <li>• Fonctions réseau détaillées : AMF, SMF, UPF, AUSF, UDM, PCF</li>
+                            <li>• Interfaces et protocoles : N1, N2, N3, N4, N6 et signalisation</li>
+                            <li>• Procédures de mobilité : handover, reselection, registration</li>
+                            <li>• Gestion de sessions : PDU Session Establishment, Modification, Release</li>
+                            <li>• Intégration avec réseaux existants : 4G/5G interworking</li>
+                            <li><strong>TP :</strong> Déploiement d'un mini-core 5G avec Open5GS et analyse de signalisation</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 3 : Technologies Radio Avancées (10h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Nouveaux spectres : bandes FR1 (sub-6 GHz) et FR2 (mmWave)</li>
+                            <li>• Ondes millimétriques : caractéristiques, avantages et défis de déploiement</li>
+                            <li>• Massive MIMO : principes, architectures et gains de capacité</li>
+                            <li>• Beamforming adaptatif : formation de faisceaux numériques et hybrides</li>
+                            <li>• Duplexage : TDD avancé et techniques de full duplex</li>
+                            <li>• Accès multiple : OFDMA avancé et nouvelles waveforms</li>
+                            <li>• Gestion des interférences : techniques de coordination et d'annulation</li>
+                            <li>• Couverture étendue : techniques CE Mode pour IoT</li>
+                            <li>• Énergie et efficacité spectrale : optimisations pour différents cas d'usage</li>
+                            <li><strong>TP :</strong> Simulation de couverture radio avec Atoll et analyse de performances</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 4 : Services Avancés et Optimisations (10h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Network Slicing : création, orchestration et gestion des slices</li>
+                            <li>• Architecture de slicing : NSSAI, S-NSSAI, fonctions dédiées</li>
+                            <li>• Edge Computing : MEC (Multi-access Edge Computing) et architectures</li>
+                            <li>• Qualité de Service (QoS) avancée : 5QI, politiques et mise en œuvre</li>
+                            <li>• Mobilité avancée : handover inter-slice, mobilité URLLC</li>
+                            <li>• Synchronisation : exigences et techniques pour applications critiques</li>
+                            <li>• Réseaux privés : architecture campus et solutions dédiées</li>
+                            <li>• Intégration cloud : hybridation avec cloud public et privé</li>
+                            <li>• Performance et KPI : monitoring avancé et optimisation</li>
+                            <li><strong>TP :</strong> Implémentation de slices dédiés et optimisation de performances</li>
                         </ul>
                     </div>
                 </div>
@@ -478,6 +530,7 @@
                         <div class="text-center sm:text-left">
                             <span class="text-lg font-bold text-primary dark:text-blue-300">40 heures de formation</span>
                             <p class="text-sm text-gray-600 dark:text-gray-300">70% pratique - 30% théorique</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Pré-requis : Connaissances réseaux IP, bases télécoms</p>
                         </div>
                         <a href="devis.html?formation=expert-5g" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-medium transition-colors">
                             Demander un devis
@@ -503,7 +556,7 @@
                     <p class="text-gray-600 dark:text-gray-300">Formation avancée - 30 heures</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Objectifs pédagogiques</h3>
                         <ul class="space-y-3 text-gray-600 dark:text-gray-300">
@@ -527,25 +580,78 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Fondamentaux cloud (6h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Virtualisation, conteneurisation, architecture microservices</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Orchestration Kubernetes (10h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Architecture K8s pour telecom, CNF, déploiement automatique</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 3 : Automation (8h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Infrastructure as Code, GitOps, pipelines CI/CD</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 4 : Réseaux privés (6h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Architecture campus networks, solutions On-Premise</p>
-                            </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Public cible</h3>
+                        <div class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <p>• Ingénieurs cloud et DevOps</p>
+                            <p>• Administrateurs systèmes</p>
+                            <p>• Architectes cloud</p>
+                            <p>• Développeurs réseaux</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Contenu pédagogique détaillé</h3>
+                    
+                    <div class="module-content" style="border-left-color: #10b981;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 1 : Fondamentaux Cloud et Virtualisation (6h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Concepts cloud : IaaS, PaaS, SaaS et modèles de déploiement</li>
+                            <li>• Virtualisation vs conteneurisation : avantages et cas d'usage</li>
+                            <li>• NFV (Network Function Virtualization) : architecture ETSI et composants</li>
+                            <li>• Conteneurs Docker : images, Dockerfile, orchestration de base</li>
+                            <li>• Architecture microservices : principes et patterns pour les telecoms</li>
+                            <li>• Principes DevOps/NetDevOps : intégration continue et déploiement</li>
+                            <li>• Environnements de développement et de test</li>
+                            <li>• Gestion des configurations et des secrets</li>
+                            <li><strong>TP :</strong> Création d'environnement de développement et déploiement de premières VNFs</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content" style="border-left-color: #10b981;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 2 : Orchestration Kubernetes Avancée (10h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Architecture Kubernetes pour telecom : contrôle plane, data plane</li>
+                            <li>• CNI (Container Network Interface) avancé : Calico, Multus, SR-IOV</li>
+                            <li>• CNF (Cloud-native Network Functions) : conception et déploiement</li>
+                            <li>• Opérateurs Kubernetes : patterns et développement d'opérateurs custom</li>
+                            <li>• Déploiement avec Helm charts : templates et gestion des versions</li>
+                            <li>• Stockage persistant : CSI (Container Storage Interface) et volumes</li>
+                            <li>• Resource management : requests, limits, QoS classes</li>
+                            <li>• Monitoring et logging : Prometheus, Grafana, ELK stack</li>
+                            <li>• Sécurité Kubernetes : RBAC, network policies, pod security</li>
+                            <li><strong>TP :</strong> Déploiement d'un cluster Kubernetes dédié 5G avec monitoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content" style="border-left-color: #10b981;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 3 : Automation et Infrastructure as Code (8h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Infrastructure as Code avec Terraform : providers, modules, state</li>
+                            <li>• Automation avec Ansible : playbooks, roles, inventories</li>
+                            <li>• GitOps pour la gestion de configuration : ArgoCD, Flux</li>
+                            <li>• Pipelines CI/CD : GitLab CI, Jenkins, GitHub Actions</li>
+                            <li>• Gestion des configurations réseau : templating et validation</li>
+                            <li>• Tests automatisés : unit tests, integration tests, performance tests</li>
+                            <li>• Rollback et blue-green deployments</li>
+                            <li>• Monitoring de l'automation : métriques et alerting</li>
+                            <li><strong>TP :</strong> Création de pipelines CI/CD complets pour le déploiement 5G</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content" style="border-left-color: #10b981;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 4 : Réseaux 5G Privés et Cas d'Usage (6h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Architecture des campus networks : exigences et contraintes</li>
+                            <li>• Solutions On-Premise vs Cloud : avantages et limitations</li>
+                            <li>• Déploiement de core 5G cloud-native : Open5GS, free5GC</li>
+                            <li>• Intégration RAN : srsRAN, O-RAN et interfaces ouvertes</li>
+                            <li>• Cas d'usage industrie 4.0 : exigences et architectures</li>
+                            <li>• Cas d'usage santé : contraintes réglementaires et techniques</li>
+                            <li>• Cas d'usage smart cities : déploiement à grande échelle</li>
+                            <li>• Optimisation des coûts et des performances</li>
+                            <li><strong>TP :</strong> Déploiement complet d'un réseau 5G privé avec monitoring</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -554,6 +660,7 @@
                         <div class="text-center sm:text-left">
                             <span class="text-lg font-bold text-green-600 dark:text-green-300">30 heures de formation</span>
                             <p class="text-sm text-gray-600 dark:text-gray-300">75% pratique - 25% théorique</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Pré-requis : Connaissances Linux, bases réseaux</p>
                         </div>
                         <a href="devis.html?formation=5g-cloud-native" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors">
                             Demander un devis
@@ -579,7 +686,7 @@
                     <p class="text-gray-600 dark:text-gray-300">Formation spécialisée - 25 heures</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                     <div>
                         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Objectifs pédagogiques</h3>
                         <ul class="space-y-3 text-gray-600 dark:text-gray-300">
@@ -603,25 +710,77 @@
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Programme détaillé</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 1 : Menaces et vulnérabilités (6h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Analyse de risque, surfaces d'attaque, tests d'intrusion</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 2 : Sécurité des slices (7h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Isolation, politiques de sécurité, gestion des identités</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 3 : IoT Security (6h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">Sécurité des devices, authentification massive, détection d'anomalies</p>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 dark:text-white">Module 4 : Monitoring (6h)</h4>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">SOC spécialisé, détection d'intrusions, forensic</p>
-                            </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Public cible</h3>
+                        <div class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <p>• Responsables sécurité</p>
+                            <p>• Auditeurs réseaux</p>
+                            <p>• Ingénieurs sécurité</p>
+                            <p>• Architectes solutions</p>
                         </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Contenu pédagogique détaillé</h3>
+                    
+                    <div class="module-content" style="border-left-color: #ef4444;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 1 : Menaces et Vulnérabilités 5G (6h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Analyse de risque spécifique 5G : méthodologies et outils</li>
+                            <li>• Cartographie des surfaces d'attaque : interfaces radio et core</li>
+                            <li>• Vulnérabilités des interfaces radio : N1, N2, attaques sur RRC/NAS</li>
+                            <li>• Attaques sur le core network virtualisé : containers escape, API exploits</li>
+                            <li>• Menaces sur la virtualisation : hypervisor attacks, resource exhaustion</li>
+                            <li>• Attaques sur les Network Slices : slice isolation bypass</li>
+                            <li>• Social engineering et attaques opérationnelles</li>
+                            <li>• Supply chain attacks et risques tiers</li>
+                            <li><strong>TP :</strong> Cartographie des risques et tests d'intrusion sur plateforme 5G</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content" style="border-left-color: #ef4444;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 2 : Sécurité des Network Slices (7h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Architecture de sécurité par slice : isolation logique et physique</li>
+                            <li>• Politiques de sécurité par slice : RBAC avancé, micro-segmentation</li>
+                            <li>• Gestion des identités et accès : authentication multi-facteurs</li>
+                            <li>• Chiffrement inter-slice et intra-slice : algorithmes et gestion des clés</li>
+                            <li>• Sécurité de l'orchestration des slices : API protection</li>
+                            <li>• Monitoring de la sécurité des slices : détection d'anomalies</li>
+                            <li>• Gestion des incidents par slice : isolation et containment</li>
+                            <li>• Compliance et audit des slices</li>
+                            <li><strong>TP :</strong> Configuration de politiques de sécurité par slice et tests d'isolation</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content" style="border-left-color: #ef4444;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 3 : IoT Security et Massive Connectivity (6h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• Sécurité des dispositifs IoT contraints : limitations et solutions</li>
+                            <li>• Authentification massive : protocoles légers et gestion des credentials</li>
+                            <li>• Attaques DDoS sur mMTC : détection et mitigation</li>
+                            <li>• Gestion sécurisée des abonnements massifs</li>
+                            <li>• Sécurité des communications device-to-device</li>
+                            <li>• Privacy et protection des données IoT</li>
+                            <li>• Mise à jour sécurisée des firmwares</li>
+                            <li>• Détection d'anomalies sur trafic IoT</li>
+                            <li><strong>TP :</strong> Analyse de sécurité d'un scénario smart city et déploiement de contremesures</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-content" style="border-left-color: #ef4444;">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Module 4 : Monitoring et Réponse aux Incidents (6h)</h4>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-4">
+                            <li>• SOC pour réseaux 5G : architecture et outils spécialisés</li>
+                            <li>• Détection d'intrusions spécifiques telecom : signatures et comportements</li>
+                            <li>• Security Information and Event Management (SIEM) 5G</li>
+                            <li>• Réponse aux incidents : procédures et playbooks</li>
+                            <li>• Forensic sur réseaux 5G : collecte et analyse des preuves</li>
+                            <li>• Threat intelligence adaptée aux telecoms</li>
+                            <li>• Gestion de crise et continuité d'activité</li>
+                            <li>• Compliance et reporting réglementaire</li>
+                            <li><strong>TP :</strong> Mise en place d'un SOC 5G et gestion d'incident simulé</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -630,6 +789,7 @@
                         <div class="text-center sm:text-left">
                             <span class="text-lg font-bold text-red-600 dark:text-red-300">25 heures de formation</span>
                             <p class="text-sm text-gray-600 dark:text-gray-300">70% pratique - 30% théorique</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Pré-requis : Connaissances sécurité réseaux, bases 5G</p>
                         </div>
                         <a href="devis.html?formation=securite-5g" class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors">
                             Demander un devis
