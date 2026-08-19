@@ -1,6 +1,0 @@
-
-User-agent: *
-Disallow: /images/
-Disallow: /js/
-
-Sitemap: https://binet.com.tn/sitemap.xml
